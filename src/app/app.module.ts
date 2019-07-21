@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { AnimvariableService } from './services/animvariable.service';
+import { BookitemComponent } from './bookitem/bookitem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    BooklistComponent
+    BooklistComponent,
+    BookitemComponent
   ],
   imports: [
     BrowserModule,
