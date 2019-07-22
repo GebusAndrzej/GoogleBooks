@@ -13,19 +13,19 @@ main{
 
     padding-bottom: 20px;
 
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: 1;
 
     animation: show 1s .5s;
-    animation-timing-function: ease in; 
+    animation-timing-function: ease-in; 
     animation-fill-mode: both;
 
 }
 
 @keyframes show {
     0% {
-        visibility: visible;
-        opacity: .0;
+        visibility: hidden;
+        opacity: 0;
     }
     100%{
         opacity: 1;
@@ -45,6 +45,7 @@ main{
 
 .bookitem figure{
     max-width: 100%;
+    cursor: pointer;
 }
 .bookitem .desc {
     position: absolute;

@@ -15,7 +15,8 @@ export class BooklistComponent implements OnInit {
   }
 
   click(){
-    this.router.navigateByUrl('/book');
+    this.router.navigateByUrl('/book/id');
+    this.animvar.booklistanim='running';
   }
 
 }

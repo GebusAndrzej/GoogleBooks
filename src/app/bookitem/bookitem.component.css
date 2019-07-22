@@ -1,4 +1,4 @@
-main {
+.container {
     position: relative;
     margin-left:50%;
     margin-top: 100px;
@@ -8,15 +8,28 @@ main {
     width:70vw;
     min-height:200px;
     background: linear-gradient(rgb(15, 15, 15),rgb(27, 27, 27));
+
+    animation: show_bookitem 1s;
+
 }
 
-main nav{
+@keyframes show_bookitem {
+    0% {
+        transform: rotateY(270deg) translateX(-50%);
+	    transform-origin: left;
+    }
+    100% {
+
+    }
+}
+
+.container nav{
     height:35px;
     width:100%;
     position: relative;
 }
 
-main nav button {
+.container nav button {
     width:100%;
     height:100%;
 }
