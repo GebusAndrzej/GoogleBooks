@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Bookshelf } from '../class/bookshelf';
+import { Observable } from 'rxjs';
+import { AnimvariableService } from './animvariable.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GetbooksService {
+  text:string;
+
+  constructor(private http: HttpClient,
+              private animvarservice: AnimvariableService) { }
+
+  private url = 'https://www.googleapis.com/books/v1/volumes/';
+
+
+  getBooks(): Observable<Bookshelf> {
+    const param = new HttpParams().set('q', this.text);
+    return this.http.get<Bookshelf>('https://www.googleapis.com/books/v1/volumes/', {params: param});
+  }
+
+}

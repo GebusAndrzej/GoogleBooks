@@ -1,23 +1,25 @@
+<app-nav></app-nav>
+
 <main [ngStyle]="{'animation-play-state': this.animvar.booklistanim}">
     
-    <div class="bookitem" >
-        <figure (click)="click()">
-            <img src="https://books.google.com/books/content?id=w3p4arTQT70C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+
+    <div *ngFor="let i of this.books.items;" class="bookitem">
+        <figure (click)="click(i.id)">
+            <img src="../../assets/bookcover.png">
         </figure>
 
         <div class="desc">
-            <h3>TytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytułTytuł</h3>
-            <h4>2005</h4>
-            <span>opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis 
-                opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis 
-                opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis 
-            </span>
+            <h3>{{i.volumeInfo.title}}</h3>
+            <h4>{{i.volumeInfo.publishedDate}}</h4>
+            <span>{{i.volumeInfo.description}}</span>
         </div>
-
     </div>
+    
+   
 
-    <div class="bookitem"></div>
-    <div class="bookitem"></div>
-    <div class="bookitem"></div>
+
+      
+
+
 
 </main>

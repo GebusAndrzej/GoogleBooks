@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimvariableService } from '../services/animvariable.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bookitem',
@@ -9,12 +9,12 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class BookitemComponent implements OnInit {
 
-  constructor(private animvar:AnimvariableService,
-              private router:Router,
-              private route:ActivatedRoute) { }
+  constructor(private animvar: AnimvariableService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.animvar.navanim='running';
+    this.animvar.navdisplay = 'none';
 
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
@@ -28,8 +28,10 @@ export class BookitemComponent implements OnInit {
 
   // back button
   back() {
+    this.animvar.navdisplay = 'flex';
     this.router.navigateByUrl('/');
-};
+
+}
 
 
 }

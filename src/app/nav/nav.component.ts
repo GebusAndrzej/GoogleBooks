@@ -1,20 +1,26 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { AnimvariableService } from '../services/animvariable.service';
+import { GetbooksService } from '../services/getbooks.service';
+import { BooklistComponent } from '../booklist/booklist.component';
 
 @Component({
+  providers:[BooklistComponent ],
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
+
 export class NavComponent implements OnInit {
-  constructor(private animvar:AnimvariableService) { }
+  constructor(private animvar:AnimvariableService,
+              private getbooksservice:GetbooksService,
+              private booklist:BooklistComponent) { }
+
+  anim:boolean=false;
+  public text:string= '';
 
   ngOnInit() {
     
   }
-
-  anim:boolean=false;
-  text=String;
 
 
   search(){
@@ -24,8 +30,9 @@ export class NavComponent implements OnInit {
       this.animvar.booklistanim="running";
     }
 
-    //call a function from service to fill booklist
-
+    //call a function in booklist component
+    this.getbooksservice.text=this.text;
+    this.booklist.getbooks();
   }
 
 }

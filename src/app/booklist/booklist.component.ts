@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AnimvariableService } from '../services/animvariable.service';
 import { Router } from '@angular/router';
+import { GetbooksService } from '../services/getbooks.service';
+import { Bookshelf } from '../class/bookshelf';
 
 @Component({
   selector: 'app-booklist',
@@ -9,14 +11,33 @@ import { Router } from '@angular/router';
 })
 export class BooklistComponent implements OnInit {
 
-  constructor(private animvar:AnimvariableService,private router:Router) { }
+  constructor(private animvar: AnimvariableService,
+              private router: Router,
+              private getbooksservice: GetbooksService,
+              private change: ChangeDetectorRef
+              ) { }
+
+
+    books: Bookshelf = new Bookshelf();
 
   ngOnInit() {
+    this.animvar.navdisplay = 'flex';
+    this.getbooks();
   }
 
-  click(){
-    this.router.navigateByUrl('/book/id');
-    this.animvar.booklistanim='running';
+  //  get books from service
+  public getbooks() {
+    //console.log(text);
+    this.getbooksservice.getBooks().subscribe(ret => {
+      this.books = ret;
+    });
   }
+
+  // click on book
+  click(id) {
+    this.router.navigateByUrl('/book/'+id);
+    this.animvar.navdisplay = 'none';
+  }
+
 
 }

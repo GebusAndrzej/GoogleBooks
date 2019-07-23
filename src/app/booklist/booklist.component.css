@@ -1,15 +1,15 @@
 main{
     width: 100%;
-    min-height: 60px;
 
     box-sizing: border-box;
-   position: relative;
+    position: relative;
     margin:auto;
     margin-top: 150px;
+    margin-bottom: 150px;
     background: linear-gradient(rgb(15, 15, 15),rgb(27, 27, 27));
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2%;
+    grid-gap: 5px;
 
     padding-bottom: 20px;
 
@@ -24,12 +24,14 @@ main{
 
 @keyframes show {
     0% {
+        display:none;
         visibility: hidden;
         opacity: 0;
     }
     100%{
         opacity: 1;
         visibility: visible;
+        display:grid;
     }
 }
 
@@ -37,7 +39,6 @@ main{
     position: relative;
     box-sizing: border-box;
     width: 99%;
-    min-height:10px;
     box-shadow: 0px 0px 3px rgb(44, 44, 44);
     margin: 5px;
     display:inline-block;
@@ -74,6 +75,7 @@ main{
         max-width: 70vw;
         color: rgb(209, 209, 209);
         border-radius: 5px;
+        overflow-y: auto;
     }
 
     .bookitem:hover{
@@ -105,8 +107,12 @@ main{
     }
     
 
+    .bookitem figure img{
+        max-width: 128px;
+    }
     .bookitem figure{
        display: inline-block;
+       max-width: 200px;
        float:left;
     }
     .bookitem .desc {
