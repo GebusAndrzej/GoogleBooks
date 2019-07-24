@@ -47,4 +47,31 @@
     .container{
         max-width: 70vw;
     }
+
+    .container .grid{
+        display: grid;
+        grid-template-areas: 
+            "img info"
+            "desc desc";
+        grid-template-columns: 200px 1fr;
+    }
+
+    .grid figure {
+        grid-area: img;
+    }
+
+    .grid figure img{
+        width:128px;
+    }
+
+    .grid .info {
+        grid-area: info;
+        text-align: left;
+    }
+
+    .grid .desc{
+        grid-area: desc;
+        padding: 20px;
+    }
+
 }

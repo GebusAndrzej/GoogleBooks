@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimvariableService } from '../services/animvariable.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GetbooksService } from '../services/getbooks.service';
 
 @Component({
   selector: 'app-bookitem',
@@ -11,17 +12,23 @@ export class BookitemComponent implements OnInit {
 
   constructor(private animvar: AnimvariableService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private getbooksservice: GetbooksService) { }
+
+
 
   ngOnInit() {
     this.animvar.navdisplay = 'none';
-
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
+    this.getbook(id);
   }
 
 
-
+  public getbook(id) {
+    this.getbooksservice.getBook(id).subscribe(ret => {
+      this.animvar.book = ret;
+    });
+  }
 
 
 

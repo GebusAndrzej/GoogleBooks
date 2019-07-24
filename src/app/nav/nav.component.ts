@@ -4,19 +4,19 @@ import { GetbooksService } from '../services/getbooks.service';
 import { BooklistComponent } from '../booklist/booklist.component';
 
 @Component({
-  providers:[BooklistComponent ],
+  providers: [BooklistComponent ],
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
 
 export class NavComponent implements OnInit {
-  constructor(private animvar:AnimvariableService,
-              private getbooksservice:GetbooksService,
-              private booklist:BooklistComponent) { }
+  constructor(private animvar: AnimvariableService,
+              private getbooksservice: GetbooksService,
+              private booklist: BooklistComponent) { }
 
-  anim:boolean=false;
-  public text:string= '';
+  anim: boolean = false;
+  public text: string = '';
 
   ngOnInit() {
     
@@ -24,14 +24,14 @@ export class NavComponent implements OnInit {
 
 
   search(){
-    if(this.anim==false){
-      this.anim=true;
-      this.animvar.navanim="running";
-      this.animvar.booklistanim="running";
+    if (this.anim == false){
+      this.anim = true;
+      this.animvar.navanim = 'running';
+      this.animvar.booklistanim = 'running';
     }
 
-    //call a function in booklist component
-    this.getbooksservice.text=this.text;
+    // call a function in booklist component
+    this.getbooksservice.text = this.text;
     this.booklist.getbooks();
   }
 

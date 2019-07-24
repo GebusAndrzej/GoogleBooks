@@ -48,6 +48,11 @@ main{
     max-width: 100%;
     cursor: pointer;
 }
+
+.bookitem figure img{
+    width:100%;
+}
+
 .bookitem .desc {
     position: absolute;
     left: 0;
@@ -91,8 +96,9 @@ main{
 
     .bookitem .desc h3{
         display:inline-block;
-        width: calc(100% - 100px);
+        width: calc(100% - 110px);
         opacity:1;
+        margin-bottom: 5px;
     }
     .bookitem .desc h4{
         position: absolute;
@@ -102,21 +108,34 @@ main{
         right: 20px;
         color:rgb(192, 192, 229);
     }
+
+    .bookitem .desc .authors{
+        display:block;
+        position: relative;
+    }
+    .bookitem .desc h5 {
+        display:inline-block;
+        position: relative;
+        margin-bottom: 3px;
+        margin-right: 10px;
+        color: aquamarine;
+    }
+
     .bookitem .desc span{
         padding-bottom: 5px;
     }
     
 
     .bookitem figure img{
-        max-width: 128px;
+        width: 128px;
     }
     .bookitem figure{
        display: inline-block;
        max-width: 200px;
-       float:left;
+       float: left;
     }
     .bookitem .desc {
         display: inline-block;
-        float:left;
+        float: right;
     }
 }

@@ -9,7 +9,7 @@ export class Item {
     id: string;
     etag: string;
     selfLink: string;
-    volumeInfo: Array<Volinfo> = new Array<Volinfo>();
+    volumeInfo: Volinfo = new Volinfo();
 }
 
 export class Volinfo {
@@ -21,13 +21,17 @@ export class Volinfo {
     pageCount?: number;
     printType?: string;
     categories?: Array<string> = new Array<string>();
-    imageLinks?: Img= new Img();
+    imageLinks?: Img = new Img('0','0');
     language?: string;
     previewLink?: string;
 }
 
 export class Img {
-    smallThumbnail?: string = 'asdf';
+    constructor(small,big) {
+        this.smallThumbnail=small;
+        this.thumbnail=big;
+    }
+    smallThumbnail?: string;
     thumbnail?: string;
 }
 

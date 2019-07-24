@@ -9,7 +9,6 @@ import { NavComponent } from './nav/nav.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { AnimvariableService } from './services/animvariable.service';
 import { BookitemComponent } from './bookitem/bookitem.component';
-import { from } from 'rxjs';
 
 @NgModule({
   declarations: [

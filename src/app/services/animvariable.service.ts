@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Bookshelf, Item } from '../class/bookshelf';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,11 @@ export class AnimvariableService {
 
   constructor() { }
 
-  text:string='marcin';
-  navanim:String="paused";
-  navdisplay:String="flex";
-  booklistanim:String="paused";
+  text = 'marcin';
+  navanim = 'paused';
+  navdisplay = 'flex';
+  booklistanim = 'paused';
+  books: Bookshelf = new Bookshelf();
+  book: Item = new Item();
 
 }

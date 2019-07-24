@@ -1,16 +1,26 @@
-<app-nav></app-nav>
-
 <main [ngStyle]="{'animation-play-state': this.animvar.booklistanim}">
     
 
-    <div *ngFor="let i of this.books.items;" class="bookitem">
+    <div *ngFor="let i of this.animvar.books.items;" class="bookitem">
         <figure (click)="click(i.id)">
-            <img src="../../assets/bookcover.png">
+            <ng-container *ngIf="i.volumeInfo.imageLinks!= undefined; then thenTemplate; else elseTemplate"></ng-container>
+             <ng-template #thenTemplate>
+                    <img src="{{i.volumeInfo.imageLinks.thumbnail}}">
+            </ng-template>
+            <ng-template #elseTemplate>
+                <img src="../../assets/bookcover.png">
+            </ng-template>
+            
         </figure>
 
         <div class="desc">
             <h3>{{i.volumeInfo.title}}</h3>
             <h4>{{i.volumeInfo.publishedDate}}</h4>
+
+            <div class="authors" >
+                <h5 *ngFor="let aut of i.volumeInfo.authors">{{aut}}</h5>
+            </div>
+
             <span>{{i.volumeInfo.description}}</span>
         </div>
     </div>

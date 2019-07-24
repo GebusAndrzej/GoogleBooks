@@ -3,16 +3,24 @@
     <button (click)="back()"><i class="fas fa-arrow-left"></i></button>
   </nav>
 
-  <figure>
-      <img src="https://promptinnov.com/wp-content/uploads/2016/03/globe-bg.jpg">
-  </figure>
+  <div class="grid">
 
-  <div>
-    <h1>
-      Tytuł
-    </h1>
-    <h3>Data</h3>
-    <p>Opis xD</p>
-  </div>
+    <figure>
+        <img *ngIf="this.animvar.book.volumeInfo.imageLinks != undefined" src="{{this.animvar.book.volumeInfo.imageLinks.thumbnail}}">
+    </figure>
+
+    <div class="info">
+      <h1>
+        {{this.animvar.book.volumeInfo.title}}
+      </h1>
+      <h3>Data</h3>
+    </div>
+
+    <div class="desc">
+      <hr/>
+      <span [innerHTML]="this.animvar.book.volumeInfo.description"></span>
+    </div>
+
+</div>
 
 </main>
