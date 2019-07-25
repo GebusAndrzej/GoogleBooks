@@ -1,33 +1,41 @@
 <main [ngStyle]="{'animation-play-state': this.animvar.booklistanim}">
+
+    <div class="no-results" *ngIf="this.animvar.books.totalItems == 0">No Results</div>
     
+    <div class="bookshelf">
 
-    <div *ngFor="let i of this.animvar.books.items;" class="bookitem">
-        <figure (click)="click(i.id)">
-            <ng-container *ngIf="i.volumeInfo.imageLinks!= undefined; then thenTemplate; else elseTemplate"></ng-container>
-             <ng-template #thenTemplate>
-                    <img src="{{i.volumeInfo.imageLinks.thumbnail}}">
-            </ng-template>
-            <ng-template #elseTemplate>
-                <img src="../../assets/bookcover.png">
-            </ng-template>
-            
-        </figure>
+        <div *ngFor="let i of this.animvar.books.items;" class="bookitem" id="{{i.id}}">
+            <figure (click)="click(i.id)">
+                <ng-container *ngIf="i.volumeInfo.imageLinks!= undefined; then thenTemplate; else elseTemplate"></ng-container>
+                <ng-template #thenTemplate>
+                        <img src="{{i.volumeInfo.imageLinks.thumbnail}}">
+                </ng-template>
+                <ng-template #elseTemplate>
+                    <img src="../../assets/bookcover.png">
+                </ng-template>
+                
+            </figure>
 
-        <div class="desc">
-            <h3>{{i.volumeInfo.title}}</h3>
-            <h4>{{i.volumeInfo.publishedDate}}</h4>
+            <div class="desc">
+                <h3>{{i.volumeInfo.title}}</h3>
+                <h4>{{i.volumeInfo.publishedDate}}</h4>
 
-            <div class="authors" >
-                <h5 *ngFor="let aut of i.volumeInfo.authors">{{aut}}</h5>
+                <div class="authors" >
+                    <h5 *ngFor="let aut of i.volumeInfo.authors">{{aut}}</h5>
+                </div>
+
+                <span>{{i.volumeInfo.description}}</span>
             </div>
-
-            <span>{{i.volumeInfo.description}}</span>
         </div>
-    </div>
+    
     
    
 
+    </div>
 
+    <button *ngIf="this.animvar.offset <= this.animvar.books.totalItems" class="load-more" (click)="getMoreBooks()">
+            Load More
+        </button>
       
 
 

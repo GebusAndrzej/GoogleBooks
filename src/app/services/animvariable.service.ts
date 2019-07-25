@@ -14,5 +14,6 @@ export class AnimvariableService {
   booklistanim = 'paused';
   books: Bookshelf = new Bookshelf();
   book: Item = new Item();
+  offset : number;
 
 }

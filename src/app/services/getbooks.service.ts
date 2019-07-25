@@ -11,13 +11,20 @@ export class GetbooksService {
   text: string;
 
   constructor(private http: HttpClient,
-              private animvarservice: AnimvariableService) { }
+              private animvar: AnimvariableService) { }
 
   private url = 'https://www.googleapis.com/books/v1/volumes/';
 
 
   getBooks(): Observable<Bookshelf> {
     const param = new HttpParams().set('q', this.text);
+    return this.http.get<Bookshelf>('https://www.googleapis.com/books/v1/volumes/', {params: param});
+  }
+
+  getMoreBooks():Observable<Bookshelf> {
+    const param = new HttpParams()
+    .set('q', this.text)
+    .set('startIndex', (this.animvar.offset * 10) + 1 + '');
     return this.http.get<Bookshelf>('https://www.googleapis.com/books/v1/volumes/', {params: param});
   }
 

@@ -7,11 +7,8 @@ main{
     margin-top: 150px;
     margin-bottom: 150px;
     background: linear-gradient(rgb(15, 15, 15),rgb(27, 27, 27));
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
+    color: rgb(209, 209, 209);
 
-    padding-bottom: 20px;
 
     visibility: visible;
     opacity: 1;
@@ -20,6 +17,12 @@ main{
     animation-timing-function: ease-in; 
     animation-fill-mode: both;
 
+}
+
+main .bookshelf {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
 }
 
 @keyframes show {
@@ -33,6 +36,28 @@ main{
         visibility: visible;
         display:grid;
     }
+}
+
+.no-results {
+    width: 100%;
+    height: 36x;
+    background: linear-gradient(rgb(54, 102, 233),rgb(29, 71, 189));
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 0px;
+}
+
+.load-more {
+    width: 100%;
+    height: 36x;
+    background: linear-gradient(rgb(54, 102, 233),rgb(29, 71, 189));
+    border-color: rgb(25, 64, 172);
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin-top:3px;
 }
 
 .bookitem{
@@ -76,11 +101,15 @@ main{
 @media (min-width: 768px) {
 
     main{
-        grid-template-columns: 1fr;
+        
         max-width: 70vw;
-        color: rgb(209, 209, 209);
+        
         border-radius: 5px;
         overflow-y: auto;
+    }
+
+    main .bookshelf {
+        grid-template-columns: 1fr;
     }
 
     .bookitem:hover{

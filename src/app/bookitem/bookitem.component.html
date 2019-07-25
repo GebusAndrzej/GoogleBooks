@@ -7,7 +7,9 @@
 
     <figure>
         <img *ngIf="this.animvar.book.volumeInfo.imageLinks != undefined" src="{{this.animvar.book.volumeInfo.imageLinks.thumbnail}}">
+        <a href="{{this.animvar.book.volumeInfo.previewLink}}"><i class="fas fa-external-link-alt"></i></a>
     </figure>
+    
 
     <div class="info">
       <h1>

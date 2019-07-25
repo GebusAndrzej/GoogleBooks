@@ -15,12 +15,13 @@ export class BookitemComponent implements OnInit {
               private route: ActivatedRoute,
               private getbooksservice: GetbooksService) { }
 
-
+    ret;
 
   ngOnInit() {
     this.animvar.navdisplay = 'none';
     const id = this.route.snapshot.paramMap.get('id');
     this.getbook(id);
+    this.ret = id;
   }
 
 
@@ -36,7 +37,7 @@ export class BookitemComponent implements OnInit {
   // back button
   back() {
     this.animvar.navdisplay = 'flex';
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/#' + this.ret);
 
 }
 

@@ -3,6 +3,7 @@
     margin-top: 100px;
     transform: translate(-50%);
     margin-bottom: 50px;
+    border-radius: 5px;
 
     width:100%;
     min-height: 40px;
@@ -62,6 +63,14 @@
 
     .grid figure img{
         width:128px;
+    }
+    .grid figure a{
+        text-decoration: none;
+        color:rgb(204, 204, 204);
+        background-color: rgb(15, 46, 185);
+        width:120px;
+        display:block;
+        border-radius: 0px 0px 5px 5px;
     }
 
     .grid .info {
