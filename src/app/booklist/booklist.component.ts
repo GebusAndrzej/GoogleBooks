@@ -27,15 +27,15 @@ export class BooklistComponent implements OnInit {
     this.getbooksservice.getBooks().subscribe(ret => {
       this.animvar.books = ret;
       this.animvar.offset = 1;
+      window.scroll(0,0);
     });
   }
   public getMoreBooks() {
     this.getbooksservice.getMoreBooks().subscribe(ret => {
-      for (let i=0;i<10;i++) {
+      for (let i=0;i<ret.items.length;i++) {
         this.animvar.books.items.push(ret.items[i]);
       }
       this.animvar.offset++;
-      
     });
   }
 

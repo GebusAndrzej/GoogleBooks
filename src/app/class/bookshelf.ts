@@ -21,16 +21,12 @@ export class Volinfo {
     pageCount?: number;
     printType?: string;
     categories?: Array<string> = new Array<string>();
-    imageLinks?: Img = new Img('0','0');
+    imageLinks?: Img = new Img();
     language?: string;
     previewLink?: string;
 }
 
 export class Img {
-    constructor(small,big) {
-        this.smallThumbnail=small;
-        this.thumbnail=big;
-    }
     smallThumbnail?: string;
     thumbnail?: string;
 }

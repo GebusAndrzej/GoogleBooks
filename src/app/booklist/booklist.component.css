@@ -88,11 +88,12 @@ main .bookshelf {
 }
 .bookitem .desc h3{
     display:inline-block;
-    color: rgb(218, 120, 120);
-    text-shadow: 1px 1px 2px black;
+    color: #8F1D2C;
     word-break: break-all;
     word-wrap: break-word;
-    opacity: .5;
+    opacity: .9;
+    text-shadow: 1px 1px 2px black;
+    background: linear-gradient(rgba(0, 0, 0, 0.966),rgba(0, 0, 0, 0))
 }
 
 
@@ -128,6 +129,7 @@ main .bookshelf {
         width: calc(100% - 110px);
         opacity:1;
         margin-bottom: 5px;
+        background: none;
     }
     .bookitem .desc h4{
         position: absolute;
@@ -135,7 +137,7 @@ main .bookshelf {
         top:0px;
         float:right;
         right: 20px;
-        color:rgb(192, 192, 229);
+        color:#80193a;
     }
 
     .bookitem .desc .authors{
@@ -147,11 +149,12 @@ main .bookshelf {
         position: relative;
         margin-bottom: 3px;
         margin-right: 10px;
-        color: aquamarine;
+        color: #80193a;
     }
 
     .bookitem .desc span{
         padding-bottom: 5px;
+        color: #a3a3a3;
     }
     
 

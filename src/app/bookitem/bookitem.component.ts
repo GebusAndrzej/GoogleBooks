@@ -38,7 +38,6 @@ export class BookitemComponent implements OnInit {
   back() {
     this.animvar.navdisplay = 'flex';
     this.router.navigateByUrl('/#' + this.ret);
-
 }
 
 

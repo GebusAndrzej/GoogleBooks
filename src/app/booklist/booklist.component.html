@@ -33,9 +33,9 @@
 
     </div>
 
-    <button *ngIf="this.animvar.offset <= this.animvar.books.totalItems" class="load-more" (click)="getMoreBooks()">
-            Load More
-        </button>
+    <button *ngIf="this.animvar.offset*10 < this.animvar.books.totalItems" class="load-more" (click)="getMoreBooks()">
+        Load More
+    </button>
       
 
 

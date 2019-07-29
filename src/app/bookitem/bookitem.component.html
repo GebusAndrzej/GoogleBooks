@@ -15,8 +15,18 @@
       <h1>
         {{this.animvar.book.volumeInfo.title}}
       </h1>
-      <h3>Data</h3>
+
+      <h4 class="authors" *ngFor="let author of this.animvar.book.volumeInfo.authors">{{author}}</h4>
+
+      <h3>{{this.animvar.book.volumeInfo.publishedDate}}</h3>
+      <h4>{{this.animvar.book.volumeInfo.publisher}}</h4>
+    
+      Pages: {{this.animvar.book.volumeInfo.pageCount}}
+    
+    
     </div>
+
+    
 
     <div class="desc">
       <hr/>
