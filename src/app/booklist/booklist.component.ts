@@ -11,9 +11,9 @@ import { Bookshelf } from '../class/bookshelf';
 })
 export class BooklistComponent implements OnInit {
 
-  constructor(private animvar: AnimvariableService,
-              private router: Router,
-              private getbooksservice: GetbooksService,
+  constructor(public animvar: AnimvariableService,
+              public router: Router,
+              public getbooksservice: GetbooksService,
               ) { }
 
 

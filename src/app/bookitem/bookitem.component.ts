@@ -10,10 +10,10 @@ import { GetbooksService } from '../services/getbooks.service';
 })
 export class BookitemComponent implements OnInit {
 
-  constructor(private animvar: AnimvariableService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private getbooksservice: GetbooksService) { }
+  constructor(public animvar: AnimvariableService,
+              public router: Router,
+              public route: ActivatedRoute,
+              public getbooksservice: GetbooksService) { }
 
     ret;
 

@@ -11,9 +11,9 @@ import { BooklistComponent } from '../booklist/booklist.component';
 })
 
 export class NavComponent implements OnInit {
-  constructor(private animvar: AnimvariableService,
-              private getbooksservice: GetbooksService,
-              private booklist: BooklistComponent) { }
+  constructor(public animvar: AnimvariableService,
+              public getbooksservice: GetbooksService,
+              public booklist: BooklistComponent) { }
 
   anim: boolean = false;
   public text: string = '';
