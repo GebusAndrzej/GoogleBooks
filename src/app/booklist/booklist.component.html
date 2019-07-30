@@ -17,14 +17,14 @@
             </figure>
 
             <div class="desc">
-                <h3>{{i.volumeInfo.title}}</h3>
+                <h3 (click)="click(i.id)">{{i.volumeInfo.title}}</h3>
                 <h4>{{i.volumeInfo.publishedDate}}</h4>
 
                 <div class="authors" >
                     <h5 *ngFor="let aut of i.volumeInfo.authors">{{aut}}</h5>
                 </div>
 
-                <span>{{i.volumeInfo.description}}</span>
+                <span *ngIf="i.volumeInfo.description != undefined">{{i.volumeInfo.description | shortdesc}}</span>
             </div>
         </div>
     
@@ -33,9 +33,13 @@
 
     </div>
 
-    <button *ngIf="this.animvar.offset*10 < this.animvar.books.totalItems" class="load-more" (click)="getMoreBooks()">
-        Load More
+    <button *ngIf="(this.animvar.offset*10) < this.animvar.books.totalItems-1" class="load-more" (click)="getMoreBooks()">
+        Load More 
     </button>
+
+    <div class="limit" *ngIf="this.animvar.ApiKeyLimit">
+        Sorry, API demo key reached limit of requests
+    </div>
       
 
 

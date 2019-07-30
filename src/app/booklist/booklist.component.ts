@@ -28,14 +28,21 @@ export class BooklistComponent implements OnInit {
       this.animvar.books = ret;
       this.animvar.offset = 1;
       window.scroll(0,0);
+    },
+    error => {
+      this.animvar.ApiKeyLimit = true;
     });
   }
+  
   public getMoreBooks() {
     this.getbooksservice.getMoreBooks().subscribe(ret => {
-      for (let i=0;i<ret.items.length;i++) {
+      for (let i=0; i<ret.items.length; i++) {
         this.animvar.books.items.push(ret.items[i]);
       }
       this.animvar.offset++;
+    },
+    error => {
+      this.animvar.ApiKeyLimit = true;
     });
   }
 

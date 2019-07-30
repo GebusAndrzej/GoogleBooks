@@ -76,6 +76,11 @@ main .bookshelf {
 
 .bookitem figure img{
     width:100%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .bookitem .desc {
@@ -93,10 +98,21 @@ main .bookshelf {
     word-wrap: break-word;
     opacity: .9;
     text-shadow: 1px 1px 2px black;
-    background: linear-gradient(rgba(0, 0, 0, 0.966),rgba(0, 0, 0, 0))
+    background: linear-gradient(rgba(0, 0, 0, 0.966),rgba(0, 0, 0, 0));
+    cursor: pointer;
 }
 
-
+.limit{
+    width: 100%;
+    min-height:30px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 0px 3px black;
+    background: linear-gradient(#DB2B30,#8F1D2C);
+    line-height: 30px;
+    font-size: 23px;
+    padding:2px 0px;
+}
 
 
 @media (min-width: 768px) {

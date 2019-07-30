@@ -26,12 +26,23 @@ nav{
     font-size: 2em;
     display:flex;
     color:rgb(143, 143, 143);
+    
 }
 .search-btn{
-    color:rgb(143, 143, 143);
+    color:rgb(73, 73, 73);
+    border-style: inset;
+    background: linear-gradient(rgb(228, 228, 228),rgb(163, 102, 102));
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+    border-color: #d80346;
+    
 }
 .search input{
     font-size: 30px;
+    background: linear-gradient(rgb(228, 228, 228),rgb(163, 102, 102));
+    border-color: #d80346;
+    border-right: 0px;
+    border-radius: 3px 0px 0px 3px;
 }
 
 

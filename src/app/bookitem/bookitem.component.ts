@@ -28,6 +28,9 @@ export class BookitemComponent implements OnInit {
   public getbook(id) {
     this.getbooksservice.getBook(id).subscribe(ret => {
       this.animvar.book = ret;
+    },
+    error => {
+      this.animvar.ApiKeyLimit = true;
     });
   }
 

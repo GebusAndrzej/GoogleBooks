@@ -6,20 +6,28 @@
   <div class="grid">
 
     <figure>
-        <img *ngIf="this.animvar.book.volumeInfo.imageLinks != undefined" src="{{this.animvar.book.volumeInfo.imageLinks.thumbnail}}">
+
+        <ng-container *ngIf="this.animvar.book.volumeInfo.imageLinks != undefined; then thenTemplate; else elseTemplate"></ng-container>
+        <ng-template #thenTemplate>
+          <img src="{{this.animvar.book.volumeInfo.imageLinks.thumbnail}}">
+        </ng-template>
+        <ng-template #elseTemplate>
+            <img src="../../assets/bookcover.png">
+        </ng-template>
+        
         <a href="{{this.animvar.book.volumeInfo.previewLink}}"><i class="fas fa-external-link-alt"></i></a>
     </figure>
     
 
-    <div class="info">
-      <h1>
+    <div class="info color-secondary">
+      <h1 class="title color-primary">
         {{this.animvar.book.volumeInfo.title}}
       </h1>
 
-      <h4 class="authors" *ngFor="let author of this.animvar.book.volumeInfo.authors">{{author}}</h4>
+      <h4 class="authors " *ngFor="let author of this.animvar.book.volumeInfo.authors">{{author}}</h4>
 
-      <h3>{{this.animvar.book.volumeInfo.publishedDate}}</h3>
-      <h4>{{this.animvar.book.volumeInfo.publisher}}</h4>
+      <h3 class="date ">{{this.animvar.book.volumeInfo.publishedDate}}</h3>
+      <h4 class="publisher ">{{this.animvar.book.volumeInfo.publisher}}</h4>
     
       Pages: {{this.animvar.book.volumeInfo.pageCount}}
     
@@ -33,6 +41,10 @@
       <span [innerHTML]="this.animvar.book.volumeInfo.description"></span>
     </div>
 
+</div>
+
+<div class="limit" *ngIf="this.animvar.ApiKeyLimit">
+  Sorry, API demo key reached limit of requests
 </div>
 
 </main>
