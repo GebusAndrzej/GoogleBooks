@@ -40,7 +40,8 @@ export class BookitemComponent implements OnInit {
   // back button
   back() {
     this.animvar.navdisplay = 'flex';
-    this.router.navigateByUrl('/#' + this.ret);
+    this.router.navigateByUrl('/');
+    //this.router.navigateByUrl('/#' + this.ret);
 }
 
 
